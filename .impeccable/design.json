@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-10T01:56:12+00:00",
+  "title": "Design System: DineChain",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "Deep Navy",
+        "canonical": "#232c4f",
+        "oklch": "oklch(30.4% 0.064 271)",
+        "tonalRamp": [
+          "#040626",
+          "#192143",
+          "#333d62",
+          "#505c82",
+          "#6f7ba4",
+          "#909dc7",
+          "#b5c3ef",
+          "#deedff"
+        ]
+      },
+      "navy-deep": {
+        "role": "primary",
+        "displayName": "Night Navy",
+        "canonical": "#181f3a",
+        "oklch": "oklch(24.8% 0.052 271)",
+        "tonalRamp": [
+          "#050821",
+          "#1b223d",
+          "#353e5c",
+          "#535c7c",
+          "#727c9d",
+          "#929dc0",
+          "#b7c3e7",
+          "#e1edff"
+        ]
+      },
+      "navy-raised": {
+        "role": "primary",
+        "displayName": "Raised Navy",
+        "canonical": "#2f3a66",
+        "oklch": "oklch(36.1% 0.077 271)",
+        "tonalRamp": [
+          "#04042b",
+          "#172049",
+          "#313c69",
+          "#4e5b8a",
+          "#6c7bac",
+          "#8d9ccf",
+          "#b2c2f7",
+          "#dbecff"
+        ]
+      },
+      "navy-line": {
+        "role": "primary",
+        "displayName": "Navy Hairline",
+        "canonical": "rgba(244, 242, 239, 0.18)",
+        "oklch": "oklch(96.2% 0.005 78)",
+        "note": "Translucent cream drawn over navy; ramp is of the opaque cream.",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252422",
+          "#413f3d",
+          "#5f5d5b",
+          "#7f7d7a",
+          "#a09e9b",
+          "#c6c4c1",
+          "#f0eeeb"
+        ]
+      },
+      "on-navy": {
+        "role": "neutral",
+        "displayName": "Cream on Navy",
+        "canonical": "#f4f2ef",
+        "oklch": "oklch(96.2% 0.005 78)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252422",
+          "#413f3d",
+          "#5f5d5b",
+          "#7f7d7a",
+          "#a09e9b",
+          "#c6c4c1",
+          "#f0eeeb"
+        ]
+      },
+      "on-navy-dim": {
+        "role": "neutral",
+        "displayName": "Dim Cream on Navy",
+        "canonical": "rgba(244, 242, 239, 0.76)",
+        "oklch": "oklch(96.2% 0.005 78)",
+        "note": "Translucent cream drawn over navy; ramp is of the opaque cream.",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252422",
+          "#413f3d",
+          "#5f5d5b",
+          "#7f7d7a",
+          "#a09e9b",
+          "#c6c4c1",
+          "#f0eeeb"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Cream Ground",
+        "canonical": "#f4f2ef",
+        "oklch": "oklch(96.2% 0.005 78)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252422",
+          "#413f3d",
+          "#5f5d5b",
+          "#7f7d7a",
+          "#a09e9b",
+          "#c6c4c1",
+          "#f0eeeb"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Sand",
+        "canonical": "#e8e1d5",
+        "oklch": "oklch(91.2% 0.018 81)",
+        "tonalRamp": [
+          "#0f0a04",
+          "#28231a",
+          "#453f35",
+          "#635d52",
+          "#837c72",
+          "#a49e92",
+          "#cac3b7",
+          "#f5eee1"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#fbfaf7",
+        "oklch": "oklch(98.5% 0.004 91)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252422",
+          "#40403d",
+          "#5e5d5b",
+          "#7e7d7a",
+          "#9f9e9b",
+          "#c5c4c1",
+          "#efeeeb"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1b2036",
+        "oklch": "oklch(25.0% 0.042 273)",
+        "tonalRamp": [
+          "#06091d",
+          "#1d2239",
+          "#383e56",
+          "#565c76",
+          "#757c97",
+          "#959dba",
+          "#bbc3e0",
+          "#e5edff"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#4a5068",
+        "oklch": "oklch(43.6% 0.040 274)",
+        "tonalRamp": [
+          "#06091c",
+          "#1e2238",
+          "#393e55",
+          "#565c75",
+          "#757c96",
+          "#969db8",
+          "#bbc3df",
+          "#e5edff"
+        ]
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Faint Ink",
+        "canonical": "#6d7184",
+        "oklch": "oklch(55.2% 0.030 276)",
+        "tonalRamp": [
+          "#080a18",
+          "#202333",
+          "#3b3f50",
+          "#595c6f",
+          "#787c8f",
+          "#999db1",
+          "#bec3d8",
+          "#e9edff"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#ddd6ca",
+        "oklch": "oklch(87.8% 0.018 81)",
+        "tonalRamp": [
+          "#0f0a04",
+          "#28231a",
+          "#453f35",
+          "#635d52",
+          "#837c71",
+          "#a49e92",
+          "#cac3b7",
+          "#f5eee1"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "#c3baab",
+        "oklch": "oklch(79.2% 0.023 81)",
+        "tonalRamp": [
+          "#100a02",
+          "#2a2317",
+          "#463f32",
+          "#645c4f",
+          "#847c6e",
+          "#a69d8f",
+          "#ccc3b4",
+          "#f7edde"
+        ]
+      },
+      "accent": {
+        "role": "secondary",
+        "displayName": "Royal Blue",
+        "canonical": "#2347a6",
+        "oklch": "oklch(43.2% 0.159 265)",
+        "tonalRamp": [
+          "#01003c",
+          "#061b5d",
+          "#1f3a7e",
+          "#3b5aa1",
+          "#597bc5",
+          "#799ce9",
+          "#9ec3ff",
+          "#c7eeff"
+        ]
+      },
+      "accent-deep": {
+        "role": "secondary",
+        "displayName": "Deep Royal",
+        "canonical": "#1a3784",
+        "oklch": "oklch(36.6% 0.134 265)",
+        "tonalRamp": [
+          "#01003c",
+          "#061b5d",
+          "#1f3a7e",
+          "#3b5aa1",
+          "#5a7ac5",
+          "#799ce9",
+          "#9ec3ff",
+          "#c7eeff"
+        ]
+      },
+      "accent-wash": {
+        "role": "secondary",
+        "displayName": "Royal Wash",
+        "canonical": "#e3e9f7",
+        "oklch": "oklch(93.4% 0.020 267)",
+        "tonalRamp": [
+          "#080b14",
+          "#20242e",
+          "#3b404b",
+          "#585e69",
+          "#787d8a",
+          "#999eab",
+          "#bec4d2",
+          "#e8eefc"
+        ]
+      },
+      "amber-ink": {
+        "role": "tertiary",
+        "displayName": "Amber Ink",
+        "canonical": "#7a5208",
+        "oklch": "oklch(47.1% 0.096 75)",
+        "tonalRamp": [
+          "#200000",
+          "#3d1900",
+          "#5c3600",
+          "#7d550d",
+          "#9e7435",
+          "#c19657",
+          "#e9bc7c",
+          "#ffe6a5"
+        ]
+      },
+      "amber-wash": {
+        "role": "tertiary",
+        "displayName": "Amber Wash",
+        "canonical": "#f7ecd6",
+        "oklch": "oklch(94.6% 0.031 85)",
+        "tonalRamp": [
+          "#110a00",
+          "#2b2312",
+          "#473f2d",
+          "#665c4a",
+          "#867c68",
+          "#a89d89",
+          "#cec3ae",
+          "#f8edd7"
+        ]
+      },
+      "red": {
+        "role": "tertiary",
+        "displayName": "Signal Red",
+        "canonical": "#c2414b",
+        "oklch": "oklch(56.0% 0.164 20)",
+        "tonalRamp": [
+          "#2d0000",
+          "#4f0009",
+          "#721b24",
+          "#953c41",
+          "#ba5d5f",
+          "#df7e7f",
+          "#ffa4a4",
+          "#ffcecd"
+        ]
+      },
+      "red-ink": {
+        "role": "tertiary",
+        "displayName": "Red Ink",
+        "canonical": "#93212b",
+        "oklch": "oklch(43.9% 0.149 22)",
+        "tonalRamp": [
+          "#2d0000",
+          "#4f0006",
+          "#721b22",
+          "#953d3e",
+          "#ba5d5d",
+          "#df7f7d",
+          "#ffa4a2",
+          "#ffcecb"
+        ]
+      },
+      "red-wash": {
+        "role": "tertiary",
+        "displayName": "Red Wash",
+        "canonical": "#f6e1e2",
+        "oklch": "oklch(92.7% 0.023 14)",
+        "tonalRamp": [
+          "#140708",
+          "#2e1f21",
+          "#4b3b3c",
+          "#6a5959",
+          "#8b7879",
+          "#ac999a",
+          "#d3bebf",
+          "#fee9ea"
+        ]
+      },
+      "red-on-navy": {
+        "role": "tertiary",
+        "displayName": "Light Red on Navy",
+        "canonical": "#ffa3ab",
+        "oklch": "oklch(80.9% 0.110 14)",
+        "tonalRamp": [
+          "#2a0001",
+          "#4c0013",
+          "#6e202e",
+          "#91404a",
+          "#b56069",
+          "#d98189",
+          "#ffa6ae",
+          "#ffd0d8"
+        ]
+      },
+      "blue-ink": {
+        "role": "tertiary",
+        "displayName": "Blue Ink",
+        "canonical": "#1f4a8f",
+        "oklch": "oklch(41.9% 0.124 260)",
+        "tonalRamp": [
+          "#00003c",
+          "#001d5c",
+          "#133c7e",
+          "#325ca0",
+          "#517dc4",
+          "#719fe9",
+          "#95c5ff",
+          "#bff0ff"
+        ]
+      },
+      "blue-wash": {
+        "role": "tertiary",
+        "displayName": "Blue Wash",
+        "canonical": "#e3ebf8",
+        "oklch": "oklch(93.8% 0.020 260)",
+        "tonalRamp": [
+          "#070b13",
+          "#1f242e",
+          "#3a404a",
+          "#575e69",
+          "#777e89",
+          "#979fab",
+          "#bdc5d1",
+          "#e7effc"
+        ]
+      },
+      "green": {
+        "role": "tertiary",
+        "displayName": "Signal Green",
+        "canonical": "#6fb08a",
+        "oklch": "oklch(70.3% 0.087 158)",
+        "tonalRamp": [
+          "#001400",
+          "#003012",
+          "#004d2d",
+          "#2b6c4a",
+          "#4d8d69",
+          "#6eaf89",
+          "#94d6ae",
+          "#bdffd8"
+        ]
+      },
+      "green-ink": {
+        "role": "tertiary",
+        "displayName": "Green Ink",
+        "canonical": "#22663f",
+        "oklch": "oklch(45.7% 0.094 155)",
+        "tonalRamp": [
+          "#001400",
+          "#00300c",
+          "#004d28",
+          "#2a6d45",
+          "#4c8e64",
+          "#6db085",
+          "#93d6a9",
+          "#bdffd3"
+        ]
+      },
+      "green-wash": {
+        "role": "tertiary",
+        "displayName": "Green Wash",
+        "canonical": "#e1efe5",
+        "oklch": "oklch(93.9% 0.020 155)",
+        "tonalRamp": [
+          "#050e08",
+          "#1c2720",
+          "#38433b",
+          "#556159",
+          "#748178",
+          "#95a299",
+          "#bbc8be",
+          "#e5f3e9"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home hero stacked list of ways to eat."
+      },
+      "headline-lg": {
+        "displayName": "Headline large",
+        "purpose": "Home section titles; guest page and split titles at 64-72px."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Staff page heads and the login heading."
+      },
+      "figure-lg": {
+        "displayName": "Figure large",
+        "purpose": "Change due, kitchen quantities, owner totals, order total."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Table numbers, board titles, branch codes, counter digits, photo-less dish names."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel heads, menu prices, empty-state headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All UI text; 14px in tables."
+      },
+      "body-strong": {
+        "displayName": "Body strong",
+        "purpose": "Dish names, line items, branch names."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase group labels: categories, areas, kitchen columns, table headers."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "DINECHAIN text wordmark in rail, header, footer."
+      },
+      "oval-caps": {
+        "displayName": "Oval capitals",
+        "purpose": "Serif capitals inside the guest oval call to action."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift",
+        "value": "0 2px 6px rgba(27, 32, 54, 0.08), 0 16px 36px rgba(27, 32, 54, 0.14)",
+        "purpose": "Floating layers only: toasts and the guest sticky cart button."
+      },
+      {
+        "name": "selection-ring",
+        "value": "0 0 0 3px #2347a6",
+        "purpose": "Picked table tile or ticket, with a 2px rise."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid #2347a6; outline-offset: 2px",
+        "purpose": "Keyboard focus everywhere; white on the hero photo."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The one easing for all transitions."
+      },
+      {
+        "name": "press",
+        "value": "120ms translateY(1px)",
+        "purpose": "Button press."
+      },
+      {
+        "name": "state",
+        "value": "160-240ms",
+        "purpose": "Hover and state colour changes; oval fill 200ms; hero list 240ms."
+      },
+      {
+        "name": "toast-sheet-in",
+        "value": "260ms rise",
+        "purpose": "Toast and bottom sheet entrance."
+      },
+      {
+        "name": "kticket-in",
+        "value": "320ms drop 6px",
+        "purpose": "New kitchen ticket."
+      },
+      {
+        "name": "strike",
+        "value": "360ms stroke-dashoffset",
+        "purpose": "The strike draws in and wipes out; none under reduced motion."
+      },
+      {
+        "name": "meter-fill",
+        "value": "600ms scaleX",
+        "purpose": "Kitchen and branch load meters; dish photo zoom."
+      },
+      {
+        "name": "hero-settle",
+        "value": "2400ms scale 1.12 to 1.04",
+        "purpose": "Home hero photo settle; none under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "small-phone",
+        "value": "max-width: 600px"
+      },
+      {
+        "name": "guest-column",
+        "value": "min-width: 701px"
+      },
+      {
+        "name": "phone",
+        "value": "max-width: 900px"
+      },
+      {
+        "name": "tablet",
+        "value": "901px-1100px"
+      },
+      {
+        "name": "desktop",
+        "value": "min-width: 1101px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary and Outline Buttons",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Navy pill for the one primary action of a staff screen; outlines for the rest; danger in red ink.",
+      "html": "<div style=\"display:flex;flex-direction:column;gap:10px;width:340px\"><button class=\"ds-btn ds-btn-primary ds-lg\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1\"/><path d=\"M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4\"/></svg> Thu tiền mặt · 129.600đ</button><div style=\"display:flex;gap:8px\"><button class=\"ds-btn\">Quay lại</button><button class=\"ds-btn ds-btn-danger\">Huỷ đơn</button></div></div>",
+      "css": ":host{--navy:#232c4f;--navy-deep:#181f3a;--navy-raised:#2f3a66;--navy-line:rgba(244,242,239,.18);--on-navy:#f4f2ef;--on-navy-dim:rgba(244,242,239,.76);--ground:#f4f2ef;--sand:#e8e1d5;--paper:#fbfaf7;--ink:#1b2036;--ink-soft:#4a5068;--ink-faint:#6d7184;--rule:#ddd6ca;--rule-strong:#c3baab;--accent:#2347a6;--accent-deep:#1a3784;--red:#c2414b;--red-ink:#93212b;--red-wash:#f6e1e2;--green-ink:#22663f;--green-wash:#e1efe5;--amber-ink:#7a5208;--amber-wash:#f7ecd6;--font-ui:'Be Vietnam Pro',system-ui,sans-serif;--font-display:'Noto Serif Display Variable','Noto Serif',Georgia,serif;--display-stretch:68%;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 18px;border-radius:999px;border:1px solid var(--navy);background:transparent;color:var(--navy);font:600 15px var(--font-ui);cursor:pointer;white-space:nowrap;transition:transform 120ms var(--ease-out),background 160ms var(--ease-out),color 160ms var(--ease-out)} .ds-btn:hover{background:rgba(35,44,79,.06)} .ds-btn:active{transform:translateY(1px)} .ds-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px} .ds-btn-primary{background:var(--navy);color:var(--on-navy)} .ds-btn-primary:hover{background:var(--navy-deep)} .ds-lg{min-height:56px;padding:0 24px;font-size:17px} .ds-btn-danger{color:var(--red-ink);border-color:#dcaab0} .ds-btn-danger:hover{background:var(--red-wash)}"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "Royal blue pill: the guest forward action and the first kitchen ticket step.",
+      "html": "<button class=\"ds-btn ds-btn-accent\">Xem giỏ · 3 món</button>",
+      "css": ":host{--navy:#232c4f;--navy-deep:#181f3a;--navy-raised:#2f3a66;--navy-line:rgba(244,242,239,.18);--on-navy:#f4f2ef;--on-navy-dim:rgba(244,242,239,.76);--ground:#f4f2ef;--sand:#e8e1d5;--paper:#fbfaf7;--ink:#1b2036;--ink-soft:#4a5068;--ink-faint:#6d7184;--rule:#ddd6ca;--rule-strong:#c3baab;--accent:#2347a6;--accent-deep:#1a3784;--red:#c2414b;--red-ink:#93212b;--red-wash:#f6e1e2;--green-ink:#22663f;--green-wash:#e1efe5;--amber-ink:#7a5208;--amber-wash:#f7ecd6;--font-ui:'Be Vietnam Pro',system-ui,sans-serif;--font-display:'Noto Serif Display Variable','Noto Serif',Georgia,serif;--display-stretch:68%;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 18px;border-radius:999px;border:1px solid var(--navy);background:transparent;color:var(--navy);font:600 15px var(--font-ui);cursor:pointer;white-space:nowrap;transition:transform 120ms var(--ease-out),background 160ms var(--ease-out),color 160ms var(--ease-out)} .ds-btn:hover{background:rgba(35,44,79,.06)} .ds-btn:active{transform:translateY(1px)} .ds-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px} .ds-btn-accent{background:var(--accent);border-color:var(--accent);color:#fff} .ds-btn-accent:hover{background:var(--accent-deep)}"
+    },
+    {
+      "name": "Guest Oval",
+      "kind": "button",
+      "refersTo": "button-oval",
+      "description": "Hairline ellipse with condensed serif capitals; guest pages only.",
+      "html": "<button class=\"ds-oval\">Xem<br>thực đơn</button>",
+      "css": ":host{--navy:#232c4f;--navy-deep:#181f3a;--navy-raised:#2f3a66;--navy-line:rgba(244,242,239,.18);--on-navy:#f4f2ef;--on-navy-dim:rgba(244,242,239,.76);--ground:#f4f2ef;--sand:#e8e1d5;--paper:#fbfaf7;--ink:#1b2036;--ink-soft:#4a5068;--ink-faint:#6d7184;--rule:#ddd6ca;--rule-strong:#c3baab;--accent:#2347a6;--accent-deep:#1a3784;--red:#c2414b;--red-ink:#93212b;--red-wash:#f6e1e2;--green-ink:#22663f;--green-wash:#e1efe5;--amber-ink:#7a5208;--amber-wash:#f7ecd6;--font-ui:'Be Vietnam Pro',system-ui,sans-serif;--font-display:'Noto Serif Display Variable','Noto Serif',Georgia,serif;--display-stretch:68%;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-oval{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-width:150px;min-height:84px;padding:8px 22px;border-radius:50%;border:1px solid currentColor;font-family:var(--font-display);font-stretch:var(--display-stretch);font-weight:400;font-size:17px;letter-spacing:.06em;line-height:1.05;text-transform:uppercase;color:var(--navy);background:transparent;cursor:pointer;transition:background 200ms var(--ease-out),color 200ms var(--ease-out)} .ds-oval:hover{background:var(--navy);border-color:var(--navy);color:var(--on-navy)} .ds-oval:focus-visible{outline:2px solid var(--accent);outline-offset:2px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Paper field with a strong-rule hairline; royal focus.",
+      "html": "<label class=\"ds-field\">Tên đăng nhập<input class=\"ds-input\" placeholder=\"thungan\"></label>",
+      "css": ":host{--navy:#232c4f;--navy-deep:#181f3a;--navy-raised:#2f3a66;--navy-line:rgba(244,242,239,.18);--on-navy:#f4f2ef;--on-navy-dim:rgba(244,242,239,.76);--ground:#f4f2ef;--sand:#e8e1d5;--paper:#fbfaf7;--ink:#1b2036;--ink-soft:#4a5068;--ink-faint:#6d7184;--rule:#ddd6ca;--rule-strong:#c3baab;--accent:#2347a6;--accent-deep:#1a3784;--red:#c2414b;--red-ink:#93212b;--red-wash:#f6e1e2;--green-ink:#22663f;--green-wash:#e1efe5;--amber-ink:#7a5208;--amber-wash:#f7ecd6;--font-ui:'Be Vietnam Pro',system-ui,sans-serif;--font-display:'Noto Serif Display Variable','Noto Serif',Georgia,serif;--display-stretch:68%;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-field{display:flex;flex-direction:column;gap:6px;width:300px;font:500 13px var(--font-ui);color:var(--ink-soft);letter-spacing:.02em} .ds-input{min-height:42px;padding:8px 12px;border-radius:4px;border:1px solid var(--rule-strong);background:var(--paper);color:var(--ink);font:400 15px var(--font-ui);caret-color:var(--accent)} .ds-input::placeholder{color:var(--ink-faint)} .ds-input:focus{outline:2px solid rgba(35,71,166,.35);outline-offset:0;border-color:var(--accent)}"
+    },
+    {
+      "name": "Navy Rail",
+      "kind": "nav",
+      "refersTo": "rail-link-active",
+      "description": "Staff navigation: spaced wordmark, serif branch name, pill links; active is a cream pill.",
+      "html": "<nav class=\"ds-rail\"><div class=\"ds-mark\">DineChain</div><div class=\"ds-branch\">Chi nhánh<strong>Chi nhánh 01</strong></div><a class=\"ds-link ds-active\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z\"/><path d=\"M14 8H8\"/><path d=\"M16 12H8\"/><path d=\"M13 16H8\"/></svg>Bán hàng</a><a class=\"ds-link\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z\"/><path d=\"M14 8H8\"/><path d=\"M16 12H8\"/><path d=\"M13 16H8\"/></svg>Ca của tôi</a></nav>",
+      "css": ":host{--navy:#232c4f;--navy-deep:#181f3a;--navy-raised:#2f3a66;--navy-line:rgba(244,242,239,.18);--on-navy:#f4f2ef;--on-navy-dim:rgba(244,242,239,.76);--ground:#f4f2ef;--sand:#e8e1d5;--paper:#fbfaf7;--ink:#1b2036;--ink-soft:#4a5068;--ink-faint:#6d7184;--rule:#ddd6ca;--rule-strong:#c3baab;--accent:#2347a6;--accent-deep:#1a3784;--red:#c2414b;--red-ink:#93212b;--red-wash:#f6e1e2;--green-ink:#22663f;--green-wash:#e1efe5;--amber-ink:#7a5208;--amber-wash:#f7ecd6;--font-ui:'Be Vietnam Pro',system-ui,sans-serif;--font-display:'Noto Serif Display Variable','Noto Serif',Georgia,serif;--display-stretch:68%;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-rail{background:var(--navy);color:var(--on-navy);width:240px;padding:24px 14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-ui)} .ds-mark{font-weight:500;font-size:15px;letter-spacing:.32em;text-transform:uppercase;padding:0 10px 14px} .ds-branch{margin:0 4px 14px;padding:12px;border:1px solid var(--navy-line);border-radius:4px;font-size:12px;color:var(--on-navy-dim)} .ds-branch strong{display:block;color:var(--on-navy);font-family:var(--font-display);font-stretch:var(--display-stretch);font-weight:400;font-size:24px;line-height:1.1} .ds-link{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:999px;color:var(--on-navy-dim);text-decoration:none;font-weight:500;transition:background 160ms var(--ease-out),color 160ms var(--ease-out)} .ds-link:hover{background:rgba(244,242,239,.08);color:var(--on-navy)} .ds-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px} .ds-active{background:var(--on-navy);color:var(--navy);font-weight:600} .ds-active svg{color:var(--accent)}"
+    },
+    {
+      "name": "State Chips",
+      "kind": "chip",
+      "refersTo": "state-ok",
+      "description": "Wash and ink pill with an icon and a word; never colour alone.",
+      "html": "<div style=\"display:flex;gap:8px\"><span class=\"ds-state ds-ok\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m9 12 2 2 4-4\"/></svg>Bình thường</span><span class=\"ds-state ds-warn\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m12 14 4-4\"/><path d=\"M3.34 19a10 10 0 1 1 17.32 0\"/></svg>Bận</span><span class=\"ds-state ds-bad\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>Quá tải</span></div>",
+      "css": ":host{--navy:#232c4f;--navy-deep:#181f3a;--navy-raised:#2f3a66;--navy-line:rgba(244,242,239,.18);--on-navy:#f4f2ef;--on-navy-dim:rgba(244,242,239,.76);--ground:#f4f2ef;--sand:#e8e1d5;--paper:#fbfaf7;--ink:#1b2036;--ink-soft:#4a5068;--ink-faint:#6d7184;--rule:#ddd6ca;--rule-strong:#c3baab;--accent:#2347a6;--accent-deep:#1a3784;--red:#c2414b;--red-ink:#93212b;--red-wash:#f6e1e2;--green-ink:#22663f;--green-wash:#e1efe5;--amber-ink:#7a5208;--amber-wash:#f7ecd6;--font-ui:'Be Vietnam Pro',system-ui,sans-serif;--font-display:'Noto Serif Display Variable','Noto Serif',Georgia,serif;--display-stretch:68%;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-state{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font:600 13px var(--font-ui);white-space:nowrap} .ds-ok{background:var(--green-wash);color:var(--green-ink)} .ds-warn{background:var(--amber-wash);color:var(--amber-ink)} .ds-bad{background:var(--red-wash);color:var(--red-ink)}"
+    },
+    {
+      "name": "Table Tiles",
+      "kind": "card",
+      "refersTo": "table-tile",
+      "description": "Paper tiles with serif table numbers; occupied turn navy; selected takes the royal ring and rises.",
+      "html": "<div class=\"ds-floor\"><button class=\"ds-tile\"><span class=\"ds-tno\">01</span><span class=\"ds-tmeta\">4 chỗ</span></button><button class=\"ds-tile ds-occ ds-sel\"><span class=\"ds-tno\">02</span><span class=\"ds-tmeta\">129.600đ</span></button><button class=\"ds-tile ds-occ\"><span class=\"ds-tno\">03</span><span class=\"ds-tmeta\">55.000đ</span></button></div>",
+      "css": ":host{--navy:#232c4f;--navy-deep:#181f3a;--navy-raised:#2f3a66;--navy-line:rgba(244,242,239,.18);--on-navy:#f4f2ef;--on-navy-dim:rgba(244,242,239,.76);--ground:#f4f2ef;--sand:#e8e1d5;--paper:#fbfaf7;--ink:#1b2036;--ink-soft:#4a5068;--ink-faint:#6d7184;--rule:#ddd6ca;--rule-strong:#c3baab;--accent:#2347a6;--accent-deep:#1a3784;--red:#c2414b;--red-ink:#93212b;--red-wash:#f6e1e2;--green-ink:#22663f;--green-wash:#e1efe5;--amber-ink:#7a5208;--amber-wash:#f7ecd6;--font-ui:'Be Vietnam Pro',system-ui,sans-serif;--font-display:'Noto Serif Display Variable','Noto Serif',Georgia,serif;--display-stretch:68%;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-floor{display:grid;grid-template-columns:repeat(3,118px);gap:10px;padding:12px;background:var(--ground)} .ds-tile{min-height:104px;padding:10px 12px;text-align:left;border-radius:6px;border:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;font-family:var(--font-ui);transition:transform 180ms var(--ease-out),box-shadow 180ms var(--ease-out),border-color 180ms var(--ease-out)} .ds-tile:hover{border-color:var(--navy)} .ds-tile:focus-visible{outline:2px solid var(--accent);outline-offset:2px} .ds-tno{font-family:var(--font-display);font-stretch:var(--display-stretch);font-weight:400;font-size:40px;line-height:.95;color:var(--navy)} .ds-tmeta{font-size:12px;color:var(--ink-soft);font-variant-numeric:tabular-nums} .ds-occ{background:var(--navy);border-color:var(--navy)} .ds-occ .ds-tno{color:var(--on-navy)} .ds-occ .ds-tmeta{color:var(--on-navy-dim)} .ds-sel{box-shadow:0 0 0 3px var(--accent);transform:translateY(-2px)}"
+    },
+    {
+      "name": "Menu Board with the Strike",
+      "kind": "custom",
+      "refersTo": "menu-board",
+      "description": "Signature: sand board, grotesk dish names, serif prices; sold-out takes the drawn rule and stays visible.",
+      "html": "<div class=\"ds-board\"><div class=\"ds-title\">Hôm nay có</div><div class=\"ds-cat\">Món nước</div><button class=\"ds-dish\"><span class=\"ds-dname\">Phở bò tái</span><span class=\"ds-dots\"></span><span class=\"ds-price\">55.000đ</span></button><button class=\"ds-dish ds-out\" disabled><span class=\"ds-strikable\"><span class=\"ds-dname\">Bún chả Hà Nội</span><svg class=\"ds-strike\" viewBox=\"0 0 100 4\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M0 2 H100\"/></svg></span><span class=\"ds-dots\"></span><span class=\"ds-tag\">Hết</span></button></div>",
+      "css": ":host{--navy:#232c4f;--navy-deep:#181f3a;--navy-raised:#2f3a66;--navy-line:rgba(244,242,239,.18);--on-navy:#f4f2ef;--on-navy-dim:rgba(244,242,239,.76);--ground:#f4f2ef;--sand:#e8e1d5;--paper:#fbfaf7;--ink:#1b2036;--ink-soft:#4a5068;--ink-faint:#6d7184;--rule:#ddd6ca;--rule-strong:#c3baab;--accent:#2347a6;--accent-deep:#1a3784;--red:#c2414b;--red-ink:#93212b;--red-wash:#f6e1e2;--green-ink:#22663f;--green-wash:#e1efe5;--amber-ink:#7a5208;--amber-wash:#f7ecd6;--font-ui:'Be Vietnam Pro',system-ui,sans-serif;--font-display:'Noto Serif Display Variable','Noto Serif',Georgia,serif;--display-stretch:68%;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-board{background:var(--sand);color:var(--ink);border-radius:6px;padding:20px 24px 22px;width:400px;font-family:var(--font-ui)} .ds-title{font-family:var(--font-display);font-stretch:var(--display-stretch);font-weight:400;font-size:40px;line-height:1;color:var(--navy);letter-spacing:-.02em} .ds-cat{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 2px;padding-bottom:8px;border-bottom:1px solid var(--rule-strong)} .ds-dish{width:100%;display:flex;align-items:baseline;gap:10px;padding:11px 0;background:none;border:none;border-bottom:1px solid rgba(35,44,79,.12);color:var(--ink);cursor:pointer;text-align:left;font:inherit} .ds-dish:hover:not(:disabled) .ds-dname{color:var(--accent)} .ds-dish:focus-visible{outline:2px solid var(--accent);outline-offset:2px} .ds-dname{font-size:16px;font-weight:500;transition:color 160ms var(--ease-out)} .ds-dots{flex:1;min-width:16px} .ds-price{font-family:var(--font-display);font-stretch:var(--display-stretch);font-weight:400;font-size:26px;line-height:1;color:var(--navy)} .ds-out{cursor:not-allowed} .ds-out .ds-dname{color:var(--ink-faint)} .ds-tag{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red-ink)} .ds-strikable{position:relative;display:inline-block} .ds-strike{position:absolute;left:-3px;right:-3px;top:50%;width:calc(100% + 6px);height:4px;transform:translateY(-50%);overflow:visible} .ds-strike path{fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:butt;stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 360ms var(--ease-out)}"
+    },
+    {
+      "name": "Boxed Counter",
+      "kind": "custom",
+      "refersTo": "counter-digit",
+      "description": "Signature: live numbers one digit per square navy box; loose separators.",
+      "html": "<div class=\"ds-total\"><span>Tổng</span><span class=\"ds-counter\" role=\"img\" aria-label=\"129.600đ\"><span class=\"ds-d\">1</span><span class=\"ds-d\">2</span><span class=\"ds-d\">9</span><span class=\"ds-s\">.</span><span class=\"ds-d\">6</span><span class=\"ds-d\">0</span><span class=\"ds-d\">0</span><span class=\"ds-s\">đ</span></span></div>",
+      "css": ":host{--navy:#232c4f;--navy-deep:#181f3a;--navy-raised:#2f3a66;--navy-line:rgba(244,242,239,.18);--on-navy:#f4f2ef;--on-navy-dim:rgba(244,242,239,.76);--ground:#f4f2ef;--sand:#e8e1d5;--paper:#fbfaf7;--ink:#1b2036;--ink-soft:#4a5068;--ink-faint:#6d7184;--rule:#ddd6ca;--rule-strong:#c3baab;--accent:#2347a6;--accent-deep:#1a3784;--red:#c2414b;--red-ink:#93212b;--red-wash:#f6e1e2;--green-ink:#22663f;--green-wash:#e1efe5;--amber-ink:#7a5208;--amber-wash:#f7ecd6;--font-ui:'Be Vietnam Pro',system-ui,sans-serif;--font-display:'Noto Serif Display Variable','Noto Serif',Georgia,serif;--display-stretch:68%;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-total{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;width:340px;padding:12px 0;border-top:1px solid var(--rule-strong);font:400 15px var(--font-ui);color:var(--ink)} .ds-counter{display:inline-flex;align-items:flex-end;gap:3px;color:var(--navy)} .ds-d{display:inline-grid;place-items:center;width:32px;height:44px;background:var(--navy);color:var(--on-navy);font-family:var(--font-display);font-stretch:var(--display-stretch);font-weight:400;font-size:36px;line-height:1} .ds-s{font-family:var(--font-display);font-stretch:var(--display-stretch);font-weight:400;font-size:32px;line-height:1;padding:0 1px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The House on Cream and Navy",
+    "overview": "DineChain is dressed as a modern Vietnamese restaurant house: a warm cream ground, deep navy for everything that frames the room (the staff rail, the guest band, the kitchen display, occupied tables, full-colour blocks), and one royal blue that says \"act here\". The brand is carried by two things only: large, narrow condensed serif type and food photography. Everything else (labels, sentences, form text, staff buttons) is a quiet grotesk. The visual style was taken from a user-pinned restaurant website (pizza4ps.com/vn) as a reference for palette, type, composition and buttons only; none of its identity is used.\n\nThe system runs in two modes. The guest home persuades: a full-bleed food photo, a stacked giant serif list of the ways to eat, a royal-blue panel counting open branches in boxed digits, a navy/sand split, and a photo-led menu grid. The guest ordering pages and the whole staff app under /nha-hang operate: dense, flat, cream work surfaces with hairline rules, serif for the numbers the eye must find first (table numbers, prices, totals, change, quantities, codes) and large touch targets. The kitchen display is the navy room: deep navy ground, cream type, nothing on paper.\n\nThe world replaces an earlier chalkboard skin (board green, chalk colours, handwritten face) and refuses the grey SaaS POS. Surfaces are flat; depth comes from tone and hairlines, not shadow.",
+    "keyCharacteristics": [
+      "Cream ground, sand panels, paper cards; deep navy frames the room and fills the blocks.",
+      "One royal-blue accent for links, focus, selection, the guest's forward action and live counters.",
+      "Condensed serif (Noto Serif Display, width 68%) for headings and figures; Be Vietnam Pro for every word of UI.",
+      "Pill controls for staff, hairline ovals with serif capitals for guest calls to action.",
+      "The boxed-digit counter for live numbers; a clean drawn rule strikes through what is gone.",
+      "Status is always a word plus an icon, never colour alone."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Royal blue means \"act here\" or \"you are here\": links, focus, selection, live counters and the single forward action of a guest page. It is never decoration, never a heading colour, never a background for content.",
+        "section": "colors"
+      },
+      {
+        "name": "The Navy Frames the Room Rule",
+        "body": "Navy holds navigation, the guest band, the kitchen display and full-colour blocks. Work happens on cream, sand and paper; the kitchen's own controls are the only working surface on navy.",
+        "section": "colors"
+      },
+      {
+        "name": "The Wash and Ink Rule",
+        "body": "On light surfaces a status hue appears as its wash behind its ink, with a word and an icon. Raw status hues are for meters, strikes and marks on navy only.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Speaks Rule",
+        "body": "The condensed serif writes headings, prices, table numbers, totals, change, quantities, codes, counts and clocks. Sentences, labels, form text, dish names in lists and staff buttons are always Be Vietnam Pro. The guest oval is the one control set in serif capitals.",
+        "section": "typography"
+      },
+      {
+        "name": "The Label Names a Group Rule",
+        "body": "Uppercase small labels name a group of data (a category, an area, a column, a field). They never float above a headline as a decorative eyebrow.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Money Rule",
+        "body": "Grotesk amounts use tabular numerals and sit right-aligned; VND, no decimals; every total shows its proof (subtotal, discount, points, VAT).",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline, Not Shadow Rule",
+        "body": "Separate with a 1px rule or a change of ground. Shadow is reserved for floating layers; selection is a blue ring, never a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** give each staff screen one solid navy pill as its primary action; other actions are outlines.",
+      "**Do** write figures in the condensed serif at width 68%: table numbers, prices, totals, change, quantities, codes, clocks.",
+      "**Do** use the boxed-digit counter for live numbers and give it an accessible label.",
+      "**Do** strike sold-out or cancelled items with the drawn rule and keep them visible.",
+      "**Do** pair every status with a word and an icon, on its wash with its ink.",
+      "**Do** separate with 1px hairlines and changes of ground; keep panels flat.",
+      "**Do** lead the guest home with food photography and let serif type sit directly on it under a navy shade.",
+      "**Do** keep touch targets at 42px or more, 52 to 56px on POS and kitchen actions."
+    ],
+    "donts": [
+      "**Don't** introduce a second accent hue; royal blue is the only one.",
+      "**Don't** convey status by colour alone.",
+      "**Don't** set sentences, labels, form text or staff buttons in the serif.",
+      "**Don't** place uppercase labels above headlines as decorative eyebrows.",
+      "**Don't** use shadows on resting cards or for selection.",
+      "**Don't** use oval buttons in the staff app; they belong to guest pages.",
+      "**Don't** round photos or counter digit boxes.",
+      "**Don't** bring back the chalkboard skin (board green, chalk colours, a handwritten face) or drift toward a grey SaaS POS.",
+      "**Don't** use the reference site's logo, name, photos or copy; no DineChain logo or tagline exists, so the wordmark stays text."
+    ]
+  }
+}

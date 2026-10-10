@@ -1,0 +1,125 @@
+{
+  "title": "Chọn phong cách giao diện DineChain",
+  "question": "Hướng được bốc thăm là Bảng phấn ở quán. Giữ, chọn hướng khác, hoặc bốc lại.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Bảng phấn quán ăn",
+      "kicker": "THE ROLL",
+      "lineage": "bảng phấn ghi món & giá trước cửa quán, sạp chợ",
+      "thesis": "Quán nào cũng có tấm bảng xanh viết phấn: hôm nay có gì, giá bao nhiêu, món nào hết thì gạch.",
+      "palette": ["#1e3a32", "#f4f1e6", "#f2c94c", "#e8798a", "#7fb8d6"],
+      "materials": ["bảng đen xanh rêu", "phấn trắng, vàng, hồng"],
+      "viewport": "POS: thanh điều hướng màu bảng xanh bên trái; giữa là sơ đồ bàn; phải là đơn đang mở; menu chi nhánh viết như bảng phấn, món hết bị gạch ngang bằng nét phấn.",
+      "risk": "Nếu lạm dụng chữ viết tay sẽ khó đọc lúc đông khách; chữ tay chỉ dùng cho giá và số bàn.",
+      "raised": [
+        {"from": "challenger-poster-wall", "raise": "Bàn/đơn đang chọn nổi lên, phần còn lại lùi mờ: mắt luôn biết đang làm việc với cái gì."},
+        {"from": "challenger-monochrome", "raise": "Mọi con số tiền đều kèm phần chứng minh ngay cạnh: tạm tính − khuyến mãi − điểm + VAT = tổng."},
+        {"from": "challenger-timetable", "raise": "Mỗi màn hình chỉ một hành động chính được in đảo màu (THU TIỀN, NHẬN NẤU); thứ bậc bằng độ đậm, không bằng cỡ chữ to nhỏ lung tung."},
+        {"from": "challenger-transit", "raise": "Bộ trạng thái cố định cho tải bếp: BÌNH THƯỜNG / BẬN / QUÁ TẢI, luôn có chữ + ký hiệu, không chỉ màu."},
+        {"from": "challenger-catalog", "raise": "Mã đơn và số bàn là định danh chính, in to như số ghi trên bảng."},
+        {"from": "challenger-datamatics", "raise": "Toàn bộ tiền và số liệu dùng chữ số đều cột (tabular), canh phải."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Tiền polyme Việt Nam",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "các mệnh giá tiền polyme 10.000đ – 500.000đ",
+      "thesis": "Chỉ thu tiền mặt, nên cả hệ thống nói bằng màu của tờ tiền: mỗi trạng thái, mỗi chi nhánh mang một màu mệnh giá quen thuộc.",
+      "palette": ["#1f6f8b", "#b5473a", "#3f8f5a", "#c45d8f", "#f7f4ec"],
+      "materials": ["mực in tiền", "hoa văn guilloche mảnh"],
+      "viewport": "POS: màn thu tiền hiện tiền thối gợi ý theo tờ (1 tờ 50.000, 1 tờ 10.000…) bằng màu mệnh giá; phần còn lại là POS sáng, sạch.",
+      "risk": "Hướng quen thuộc, nhiều màu dễ rối nếu không giữ kỷ luật; hoa văn tiền chỉ được dùng cực ít."
+    },
+    {
+      "id": "challenger-poster-wall",
+      "label": "Tường poster kiểu Netflix",
+      "verdict": "declined",
+      "lineage": "lưới poster ứng dụng xem phim",
+      "thesis": "Menu thành các hàng ảnh món cuộn ngang.",
+      "palette": ["#111111", "#e50914", "#ffffff"],
+      "materials": ["ảnh món tràn viền"],
+      "viewport": "Hàng món theo danh mục, ô đang chọn phóng to.",
+      "case": "Không có ảnh món thật; nhân viên không nhận ra mình trong đó.",
+      "risk": "Không hợp với thao tác nhanh lúc đông khách.",
+      "kept": "Cái đang chọn nổi lên, phần còn lại lùi mờ."
+    },
+    {
+      "id": "challenger-monochrome",
+      "label": "Trang giới thiệu phần mềm đơn sắc",
+      "verdict": "declined",
+      "lineage": "trang marketing SaaS",
+      "thesis": "Một thang xám, một màu nhấn.",
+      "palette": ["#fafafa", "#111111", "#4f46e5"],
+      "materials": ["lưới sạch", "ảnh chụp màn hình"],
+      "viewport": "Câu khẳng định đi cặp với bằng chứng.",
+      "case": "Là trang bán hàng, không phải màn hình làm việc; quá giống mặc định.",
+      "risk": "Nhạt, không phân biệt được.",
+      "kept": "Mỗi khẳng định đi kèm bằng chứng — áp vào tiền: tổng luôn kèm phép tính."
+    },
+    {
+      "id": "challenger-timetable",
+      "label": "Lịch bay in một cỡ chữ",
+      "verdict": "declined",
+      "lineage": "lịch bay bỏ túi 1971",
+      "thesis": "Một cỡ chữ duy nhất, thứ bậc bằng độ đậm và đảo màu.",
+      "palette": ["#d9a520", "#1c1c1c", "#c0392b", "#2e6b4f"],
+      "materials": ["kính màu", "giấy vàng nghệ"],
+      "viewport": "Các cột nghiêng 11 độ.",
+      "case": "Bố cục nghiêng làm chậm thao tác; nhân viên quán không quen.",
+      "risk": "Khó đọc khi cần liếc nhanh.",
+      "kept": "Một hành động chính mỗi màn hình được in đảo màu."
+    },
+    {
+      "id": "challenger-transit",
+      "label": "Sơ đồ tàu điện",
+      "verdict": "declined",
+      "lineage": "bản đồ metro",
+      "thesis": "9 chi nhánh là các ga trên tuyến.",
+      "palette": ["#0f1f3d", "#e63946", "#2a6fdb", "#f4a300", "#2a9d8f"],
+      "materials": ["men sứ", "đường tuyến 45°"],
+      "viewport": "Dashboard chủ chuỗi như sơ đồ tuyến.",
+      "case": "Chỉ hợp dashboard chủ chuỗi; POS và bếp không có tuyến để vẽ.",
+      "risk": "Ẩn dụ gượng ở màn hình thu ngân.",
+      "kept": "Bộ trạng thái cố định, luôn có chữ."
+    },
+    {
+      "id": "challenger-catalog",
+      "label": "Bìa đĩa Factory Records",
+      "verdict": "declined",
+      "lineage": "nhận diện Peter Saville",
+      "thesis": "Mọi thứ là một mã số.",
+      "palette": ["#0b0b0b", "#ffffff", "#ff3b30", "#ffd60a"],
+      "materials": ["đen mờ", "nét trắng mảnh"],
+      "viewport": "Mã số là tiêu đề duy nhất.",
+      "case": "Giấu tên món sau mã màu là sai với thao tác gọi món.",
+      "risk": "Khó hiểu với nhân viên mới.",
+      "kept": "Mã đơn, số bàn là định danh chính."
+    },
+    {
+      "id": "challenger-datamatics",
+      "label": "Trường dữ liệu đen trắng",
+      "verdict": "declined",
+      "lineage": "Ryoji Ikeda, datamatics",
+      "thesis": "Cột mã vạch và số dày đặc.",
+      "palette": ["#000000", "#ffffff"],
+      "materials": ["vạch mảnh", "chữ số đơn cách"],
+      "viewport": "Toàn số liệu nhấp nháy.",
+      "case": "Nhấp nháy và không màu trạng thái — sai cho bếp giờ cao điểm.",
+      "risk": "Gây mỏi mắt.",
+      "kept": "Chữ số đều cột, canh phải."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "label": "Kiểu POS tiêu chuẩn",
+    "thesis": "Giống các POS phổ biến: nền trắng, thanh bên xám, một màu nhấn xanh.",
+    "palette": ["#ffffff", "#111827", "#2563eb", "#f3f4f6"],
+    "materials": ["lưới sạch", "thẻ bo góc"],
+    "viewport": "Thanh bên trái, lưới món ở giữa, giỏ đơn bên phải.",
+    "risk": "Không khác gì các phần mềm khác — chủ ý như vậy."
+  },
+  "steer": true
+}
