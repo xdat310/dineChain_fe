@@ -31,6 +31,26 @@ export interface AvailabilityRequest {
   available: boolean;
 }
 
+export interface BankAccount {
+  bank?: string;
+  accountNumber?: string;
+  accountName?: string;
+}
+
+export interface BankAccountRequest {
+  bank?: string;
+  accountNumber?: string;
+  accountName?: string;
+}
+
+export interface BankAccountSetting {
+  bank?: string;
+  accountNumber?: string;
+  accountName?: string;
+  autoConfirm?: boolean;
+  webhookPath?: string;
+}
+
 export interface BranchIdsRequest {
   branchIds: number[];
 }
@@ -376,6 +396,8 @@ export interface OrderItemResponse {
   status?: 'PENDING' | 'COOKING' | 'READY' | 'SERVED' | 'CANCELLED';
   notes?: string;
   cancelReason?: string;
+  readyAt?: string;
+  orderedByGuest?: boolean;
 }
 
 export interface OrderResponse {
@@ -401,6 +423,8 @@ export interface OrderResponse {
   guestName?: string;
   guestPhone?: string;
   payMethod?: 'CASH' | 'CARD' | 'BANK_TRANSFER' | 'E_WALLET';
+  transferClaimedAt?: string;
+  refundDueAt?: string;
 }
 
 export interface PaymentResponse {
@@ -513,6 +537,20 @@ export interface PurchaseOrderResponse {
   items?: PurchaseOrderLine[];
 }
 
+export interface PushKey {
+  publicKey?: string;
+}
+
+export interface PushKeys {
+  p256dh: string;
+  auth: string;
+}
+
+export interface PushSubscriptionRequest {
+  endpoint: string;
+  keys: PushKeys;
+}
+
 export interface ReceivePurchaseOrderRequest {
   items?: ReceivedLine[];
 }
@@ -559,6 +597,17 @@ export interface Row {
   unit?: string;
   quantity: number;
   minStock?: number;
+}
+
+export interface SepayTransaction {
+  id?: number;
+  gateway?: string;
+  accountNumber?: string;
+  subAccount?: string;
+  content?: string;
+  transferType?: string;
+  transferAmount?: number;
+  referenceCode?: string;
 }
 
 export interface ShiftResponse {
@@ -733,4 +782,8 @@ export interface WebTakeawayResponse {
   vatAmount?: number;
   totalAmount?: number;
   items?: GuestOrderItem[];
+  transferClaimed?: boolean;
+  cancelReason?: string;
+  bankAccount?: BankAccount;
+  autoConfirm?: boolean;
 }

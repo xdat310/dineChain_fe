@@ -1,8 +1,8 @@
-import { Boxes, ChefHat, CupSoda, Plus, Power, RefreshCw, Store, Trash2, Upload } from 'lucide-react'
+import { Boxes, ChefHat, Copy, CupSoda, Plus, Power, RefreshCw, Store, Trash2, Upload } from 'lucide-react'
 import { Fragment, useState, type FormEvent } from 'react'
 import { ApiError, get, post, put, upload } from '../api/client'
 import type {
-  ChainDashboardResponse, CreatePromotionRequest, DishBranchResponse, DishExclusionResponse, IngredientResponse, RecipeLineResponse, MenuCategoryResponse, MenuItemResponse, PromotionResponse, TransferQrSetting, VatSetting,
+  ChainDashboardResponse, CreatePromotionRequest, DishBranchResponse, DishExclusionResponse, IngredientResponse, RecipeLineResponse, MenuCategoryResponse, MenuItemResponse, PromotionResponse, TransferQrSetting, VatSetting, BankAccountSetting,
 } from '../api/types'
 import { useAuth } from '../auth'
 import { Strikable } from '../components/ChalkStrike'
@@ -33,7 +33,7 @@ export function Owner() {
       {tab === 'menu' && <ChainMenu />}
       {tab === 'promotions' && <Promotions />}
       {tab === 'vat' && <Vat />}
-      {tab === 'transfer' && <TransferQr />}
+      {tab === 'transfer' && <div className="transfer-tab"><BankTransfer /><TransferQr /></div>}
     </div>
   )
 }
@@ -409,6 +409,113 @@ function Vat() {
 
 // ---------------------------------------------------------------- bank transfer QR (web takeaway)
 
+// Bank short names SePay and VietQR recognise
+const BANKS = ['Vietcombank', 'VietinBank', 'BIDV', 'Agribank', 'MBBank', 'Techcombank', 'ACB', 'VPBank', 'TPBank', 'Sacombank', 'VIB', 'HDBank', 'OCB', 'SHB', 'MSB']
+
+// The chain's account: every web takeaway order gets its own QR with the amount and the order code filled in,
+// and with SePay connected the money confirms the order by itself
+function BankTransfer() {
+  const toast = useToast()
+  const setting = useData(() => get<BankAccountSetting>('/settings/bank-account'), [])
+  const [form, setForm] = useState<{ bank: string; accountNumber: string; accountName: string } | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const [busy, setBusy] = useState(false)
+  const [previewBroken, setPreviewBroken] = useState(false)
+  if (setting.loading) return <Loading />
+  const s = setting.data
+  const f = form ?? { bank: s?.bank ?? '', accountNumber: s?.accountNumber ?? '', accountName: s?.accountName ?? '' }
+  const saved = Boolean(s?.bank && s?.accountNumber)
+  const webhookUrl = `${window.location.origin}${s?.webhookPath ?? ''}`
+  const local = /^(localhost|127\.|192\.168\.|10\.)/.test(window.location.hostname)
+
+  async function save(next: typeof f, ok: string) {
+    setError(null)
+    setBusy(true)
+    try {
+      await put('/settings/bank-account', next)
+      setForm(null)
+      setPreviewBroken(false)
+      await setting.reload()
+      toast(ok)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Không lưu được')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  async function copy(text: string) {
+    try {
+      await navigator.clipboard.writeText(text)
+      toast('Đã chép')
+    } catch {
+      toast('Không chép được, hãy chọn và chép tay', true)
+    }
+  }
+
+  return (
+    <div className="panel panel-pad transfer-setting">
+      <div>
+        <h2 style={{ margin: 0 }}>Tài khoản nhận chuyển khoản</h2>
+        <p className="muted" style={{ margin: '6px 0 0', fontSize: 14 }}>
+          Mỗi đơn mang về sẽ có mã QR riêng, điền sẵn số tiền và nội dung là mã đơn: khách chỉ cần quét và bấm chuyển.
+        </p>
+      </div>
+      {error && <ErrorNotice message={error} />}
+
+      <form className="bank-form" onSubmit={(e) => { e.preventDefault(); save(f, 'Đã lưu tài khoản') }}>
+        <label className="field">Ngân hàng
+          <input className="input" list="bank-names" placeholder="MBBank" value={f.bank} spellCheck={false}
+            onChange={(e) => setForm({ ...f, bank: e.target.value.replace(/\s/g, '') })} />
+          <datalist id="bank-names">{BANKS.map((b) => <option key={b} value={b} />)}</datalist>
+        </label>
+        <label className="field">Số tài khoản
+          <input className="input num" inputMode="numeric" placeholder="0123456789" value={f.accountNumber}
+            onChange={(e) => setForm({ ...f, accountNumber: e.target.value.replace(/\D/g, '') })} />
+        </label>
+        <label className="field bank-form-wide">Chủ tài khoản <span className="muted">(khách thấy để yên tâm chuyển đúng)</span>
+          <input className="input" placeholder="CONG TY TNHH DINECHAIN" value={f.accountName} maxLength={100}
+            onChange={(e) => setForm({ ...f, accountName: e.target.value.toUpperCase() })} />
+        </label>
+        <div className="row bank-form-wide">
+          <button className="btn btn-primary" disabled={busy || !f.bank || !f.accountNumber}>
+            {busy && <span className="spinner" aria-hidden="true" />} Lưu tài khoản
+          </button>
+          {saved && (
+            <button type="button" className="btn btn-danger" disabled={busy}
+              onClick={() => window.confirm('Bỏ tài khoản? Khách sẽ thấy ảnh QR cố định bên dưới, nếu có.') && save({ bank: '', accountNumber: '', accountName: '' }, 'Đã bỏ tài khoản')}>
+              Bỏ tài khoản
+            </button>
+          )}
+        </div>
+      </form>
+
+      {saved && (
+        <div className="bank-preview">
+          {previewBroken
+            ? <span className="muted">Không tạo được mã QR: kiểm tra lại tên ngân hàng.</span>
+            : <img src={`https://qr.sepay.vn/img?acc=${encodeURIComponent(s!.accountNumber!)}&bank=${encodeURIComponent(s!.bank!)}&template=compact`}
+                alt="Mã QR mẫu của tài khoản" onError={() => setPreviewBroken(true)} />}
+          <p className="muted" style={{ margin: 0, fontSize: 13 }}>Mã mẫu chưa có số tiền. Quét thử bằng app ngân hàng để chắc chắn đúng tên chủ tài khoản.</p>
+        </div>
+      )}
+
+      {s?.autoConfirm
+        ? <div className="sepay-status sepay-on">
+            <strong>Tự xác nhận bằng SePay: đang bật</strong>
+            <p>Trong SePay, mục Webhooks, thêm webhook gửi tới địa chỉ dưới đây, chứng thực kiểu “API Key” với đúng khoá đã đặt ở SEPAY_API_KEY.</p>
+            <div className="sepay-url"><code>{webhookUrl}</code>
+              <button type="button" className="btn btn-sm" onClick={() => copy(webhookUrl)}><Copy size={14} aria-hidden="true" /> Chép</button></div>
+            {local && <p className="muted">Địa chỉ này chỉ dùng được trong mạng nội bộ: SePay cần địa chỉ công khai, hãy mở trang quản lý qua link ngrok rồi chép lại.</p>}
+          </div>
+        : <div className="sepay-status">
+            <strong>Tự xác nhận bằng SePay: chưa bật</strong>
+            <p>Thu ngân đang xác nhận tiền về bằng tay. Để bật: đặt biến môi trường SEPAY_API_KEY cho backend rồi khởi động lại.</p>
+          </div>}
+    </div>
+  )
+}
+
 function TransferQr() {
   const toast = useToast()
   const qr = useData(() => get<TransferQrSetting>('/settings/transfer-qr'), [])
@@ -466,9 +573,9 @@ function TransferQr() {
   return (
     <div className="panel panel-pad transfer-setting">
       <div>
-        <h2 style={{ margin: 0 }}>Mã QR chuyển khoản cho đơn mang về</h2>
+        <h2 style={{ margin: 0 }}>Ảnh mã QR cố định</h2>
         <p className="muted" style={{ margin: '6px 0 0', fontSize: 14 }}>
-          Khách đặt mang về trên web và chọn chuyển khoản sẽ thấy ảnh này, kèm số tiền và nội dung là mã đơn.
+          Chỉ dùng khi chưa nhập tài khoản ở trên. Khách thấy ảnh này kèm số tiền và nội dung là mã đơn, tự gõ số tiền khi chuyển.
           Thu ngân thấy tiền về thì bấm xác nhận, bếp mới làm.
         </p>
       </div>

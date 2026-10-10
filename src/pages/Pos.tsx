@@ -1,5 +1,5 @@
 import { Ban, Check, CupSoda, Globe, HandPlatter, Landmark, Minus, Plus, Search, Send, ShoppingBag, Ticket, Trash2, UserRound, Wallet, X } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ApiError, get, post, put } from '../api/client'
 import type {
   BranchLoadResponse, BranchMenuItemResponse, CustomerResponse, MenuCategoryResponse, OrderItemResponse,
@@ -8,6 +8,9 @@ import type {
 import { can, useAuth } from '../auth'
 import { Strikable } from '../components/ChalkStrike'
 import { DishThumb } from '../components/DishThumb'
+import { GuestOrderAlerts, useGuestOrderAlerts } from '../components/GuestOrderAlerts'
+import { TakeawayAlerts, useTakeawayReminders } from '../components/TakeawayAlerts'
+import { unlockSound } from '../lib/chime'
 import { Empty, ErrorNotice, Loading } from '../components/Feedback'
 import { Chip, LoadState } from '../components/State'
 import { useToast } from '../components/Toast'
@@ -39,6 +42,27 @@ export function Pos() {
   const load = useData(() => get<BranchLoadResponse>(`/kitchen/branches/${branchId}/load`), [branchId], 15000)
 
   const openOrders = useMemo(() => orders.data ?? [], [orders.data])
+  // Takeaway reminders ring at the cash desk only: the cashier is the one who takes the money and hands food over
+  const refunds = useData(
+    () => (can.cash(role) ? get<OrderResponse[]>(`/orders/branch/${branchId}/refunds-due`) : Promise.resolve([])),
+    [branchId, role], 15000)
+  const reminders = useTakeawayReminders(orders.data, refunds.data, can.cash(role))
+  const guestOrders = useGuestOrderAlerts(orders.data, true)
+  const [settling, setSettling] = useState<number | null>(null)
+  async function refunded(orderId: number) {
+    if (!window.confirm('Đã chuyển trả tiền cho khách, hoặc đã kiểm tra là tiền chưa hề về?')) return
+    setSettling(orderId)
+    try {
+      await put(`/orders/${orderId}/refund-settled`)
+      await refunds.reload()
+      toast('Đã ghi nhận hoàn tiền')
+    } catch (e) {
+      toast(e instanceof ApiError ? e.message : 'Không lưu được', true)
+    } finally {
+      setSettling(null)
+    }
+  }
+  useEffect(() => unlockSound(), [])
   const ordersByTable = useMemo(() => {
     const map = new Map<number, OrderResponse[]>()
     for (const o of openOrders) if (o.tableId) map.set(o.tableId, [...(map.get(o.tableId) ?? []), o])
@@ -103,6 +127,12 @@ export function Pos() {
             </div>
           )}
         </div>
+
+        <GuestOrderAlerts alerts={guestOrders.alerts} onDismiss={guestOrders.dismiss}
+          tableName={(id) => `Bàn ${tables.data?.find((t) => t.id === id)?.name ?? ''}`.trim()}
+          onOpen={(tableId) => { setMode('floor'); select({ kind: 'table', tableId }) }} />
+        <TakeawayAlerts alerts={reminders.alerts} onDismiss={reminders.dismiss} onRefunded={refunded} settling={settling}
+          onOpen={(orderId) => { setMode('takeaway'); select({ kind: 'order', orderId }) }} />
 
         {stockPanel && (
           <ReadyMadeStock items={(menu.data ?? []).filter((m) => !m.needsKitchen)} branchId={branchId!} onChanged={menu.reload} />
@@ -247,7 +277,7 @@ function TakeawayList({ orders, paused, wait, selected, onNew, onSelect }: {
               <button key={o.id} className={`ticket web-waiting${selected?.kind === 'order' && selected.orderId === o.id ? ' selected' : ''}`} onClick={() => onSelect(o.id!)}>
                 <span className="row" style={{ justifyContent: 'space-between' }}>
                   <span className="code">{o.code}</span>
-                  <Chip tone="warn">{o.payMethod === 'BANK_TRANSFER' ? 'Chuyển khoản' : 'Tiền mặt'}</Chip>
+                  <Chip tone={o.transferClaimedAt ? 'info' : 'warn'}>{o.transferClaimedAt ? 'Khách báo đã chuyển' : o.payMethod === 'BANK_TRANSFER' ? 'Chuyển khoản' : 'Tiền mặt'}</Chip>
                 </span>
                 <span style={{ fontWeight: 600 }}>{o.guestName} · <span className="num">{o.guestPhone}</span></span>
                 <span className="muted" style={{ fontSize: 13 }}>{o.items?.filter((i) => i.status !== 'CANCELLED').length} món · đặt lúc {time(o.createdAt)}</span>

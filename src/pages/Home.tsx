@@ -13,6 +13,8 @@ import { useData } from '../lib/useData'
 import { NearMe } from '../components/NearMe'
 import { byDistance, formatKm, useMyLocation } from '../lib/geo'
 
+const YEAR = new Date().getFullYear()
+
 const TAKEAWAY_BRANCH_KEY = 'dinechain.takeawayBranch'
 
 function scrollToMenu() {
@@ -268,7 +270,7 @@ export function Home() {
             <button onClick={scrollToMenu}>Thực đơn</button>
           </nav>
         </div>
-        <small className="foot-copy">© {new Date().getFullYear()} DineChain</small>
+        <small className="foot-copy">© {YEAR} DineChain</small>
       </footer>
 
       <nav className="mobile-bar" aria-label="Gọi món">

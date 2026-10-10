@@ -15,6 +15,9 @@ const DEMO = [
   { username: 'kho', password: '12345', label: 'Kho' },
 ]
 
+// Quick sign-in only on the developer's own machine: through ngrok or the Wi-Fi IP anyone holding the link would get in
+const QUICK_LOGIN = import.meta.env.DEV && ['localhost', '127.0.0.1'].includes(window.location.hostname)
+
 const WEEKDAY = new Intl.DateTimeFormat('vi-VN', { weekday: 'long' })
 const DAY = new Intl.DateTimeFormat('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' })
 const CLOCK = new Intl.DateTimeFormat('vi-VN', { hour: '2-digit', minute: '2-digit', hour12: false })
@@ -88,8 +91,8 @@ export function Login() {
             </button>
           </form>
 
-          {/* Bootstrap accounts are a development convenience: never shown on a production build */}
-          {import.meta.env.DEV && <div className="quick-login">
+          {/* Bootstrap accounts are a development convenience: never shown on a production build or to other devices */}
+          {QUICK_LOGIN && <div className="quick-login">
             <h3>Vào nhanh <span>tài khoản ban đầu, mật khẩu 12345</span></h3>
             <div className="quick-grid">
               {DEMO.map((d) => (

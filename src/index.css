@@ -630,13 +630,20 @@ a.guest-brand svg { display: inline; vertical-align: -2px; margin-right: 6px; }
 .track-steps li.now { color: var(--navy); font-weight: 600; }
 .track-steps li.now .dot { border-color: var(--accent); background: var(--accent); color: #fff; }
 
-.pay-transfer { padding: 22px 20px; display: grid; gap: 14px; justify-items: center; text-align: center; }
+.pay-transfer { padding: 22px 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; justify-items: center; text-align: center; }
 .pay-transfer h2 { margin: 0; font-family: var(--font-display); font-stretch: var(--display-stretch); font-weight: 400; font-size: 30px; line-height: 1.05; color: var(--navy); display: flex; align-items: center; gap: 10px; }
 .transfer-qr { width: min(280px, 100%); aspect-ratio: 1; object-fit: contain; background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-sm); }
 .transfer-facts { width: 100%; display: grid; gap: 0; border-top: 1px solid var(--rule); }
 .transfer-facts > div { display: grid; grid-template-columns: 80px 1fr auto; align-items: center; gap: 10px; padding: 12px 2px; border-bottom: 1px solid var(--rule); text-align: left; }
 .transfer-facts span { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
 .transfer-facts strong { font-family: var(--font-display); font-stretch: var(--display-stretch); font-weight: 400; font-size: 30px; color: var(--navy); line-height: 1; white-space: nowrap; }
+.transfer-facts .fact-text strong { font-family: var(--font-body); font-stretch: normal; font-weight: 600; font-size: 16px; white-space: normal; overflow-wrap: anywhere; }
+.transfer-facts .fact-account strong { font-size: 24px; }
+@media (max-width: 420px) {
+  .transfer-facts > .fact-text, .transfer-facts > .fact-account { grid-template-columns: 86px minmax(0, 1fr) auto; }
+  .transfer-facts > .fact-text span, .transfer-facts > .fact-account span { white-space: normal; }
+  .transfer-facts .fact-account strong { font-size: 20px; }
+}
 @media (max-width: 420px) { .transfer-facts strong { font-size: 22px; } .transfer-facts > div { grid-template-columns: auto 1fr auto; } .transfer-facts span { white-space: nowrap; } }
 .pay-cash { display: flex; gap: 14px; align-items: flex-start; background: var(--amber-wash); border-color: #e6cf9f; color: var(--amber-ink); }
 .pay-cash p { margin: 4px 0 0; }
@@ -831,6 +838,17 @@ a.guest-brand svg { display: inline; vertical-align: -2px; margin-right: 6px; }
 /* ---------------------------------------------------------------- owner: bank transfer QR */
 
 .transfer-setting { max-width: 720px; display: grid; gap: 20px; }
+.transfer-tab { display: grid; gap: 20px; }
+.bank-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.bank-form-wide { grid-column: 1 / -1; }
+.bank-preview { display: grid; grid-template-columns: 160px 1fr; gap: 16px; align-items: center; }
+.bank-preview img { width: 160px; border: 1px solid var(--rule); border-radius: var(--radius-sm, 8px); background: #fff; }
+.sepay-status { display: grid; gap: 8px; padding: 14px 16px; border-radius: var(--radius); border: 1px solid var(--rule); background: var(--ground); }
+.sepay-status p { margin: 0; font-size: 14px; }
+.sepay-on { border-color: #b9d8c2; background: #eef7f0; }
+.sepay-url { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.sepay-url code { flex: 1; min-width: 0; overflow-wrap: anywhere; padding: 8px 10px; border-radius: 6px; background: #fff; border: 1px solid var(--rule); font-size: 13px; }
+@media (max-width: 600px) { .bank-form, .bank-preview { grid-template-columns: 1fr; } }
 .qr-upload { display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: start; }
 .qr-preview { width: 220px; aspect-ratio: 1; display: grid; place-items: center; background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-sm); overflow: hidden; text-align: center; }
 .qr-preview img { width: 100%; height: 100%; object-fit: contain; }
@@ -1011,3 +1029,34 @@ table.data tr.is-current td { background: var(--accent-wash); }
   .howto-facts > div + div { border-top: 1px solid var(--rule); }
   .site-foot { grid-template-columns: 1fr; width: calc(100% - 32px); }
 }
+
+/* ---------------------------------------------------------------- takeaway reminders at the counter */
+
+.takeaway-alerts { display: grid; gap: 8px; margin-bottom: 18px; }
+.t-alert { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 12px; padding: 10px 12px 10px 14px; border-radius: var(--radius); border: 1px solid var(--rule-strong); background: #fff; animation: alert-in 280ms var(--ease-out); }
+.t-alert > svg { flex: none; }
+.t-alert-text { display: flex; flex-direction: column; min-width: 0; }
+.t-alert-text strong { font-size: 15px; }
+.t-alert-text span { font-size: 13px; color: var(--ink-soft); }
+.t-alert-text a { color: inherit; font-weight: 600; }
+.t-alert-text a svg { display: inline; vertical-align: -1px; }
+.t-alert-new { border-color: var(--accent); background: var(--accent-wash); }
+.t-alert-new > svg { color: var(--accent); }
+.t-alert-claimed { border-color: var(--blue); background: var(--blue-wash); }
+.t-alert-claimed > svg { color: var(--blue-ink); }
+.t-alert-waiting { border-color: #e6cf9f; background: var(--amber-wash); }
+.t-alert-waiting > svg { color: var(--amber-ink); }
+.t-alert-uncollected { border-color: #dcaab0; background: var(--red-wash); }
+.t-alert-uncollected > svg { color: var(--red-ink); }
+.t-alert-refund { border-color: var(--red); background: var(--red-wash); }
+.t-alert-refund > svg { color: var(--red-ink); }
+@keyframes alert-in { from { transform: translateY(-6px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .t-alert { animation: none; } }
+@media (max-width: 600px) { .t-alert { grid-template-columns: auto 1fr auto; } .t-alert .btn { grid-column: 2 / -1; justify-self: start; } }
+
+/* ---------------------------------------------------------------- guest: tell me when it is ready */
+
+.push-ask { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px 16px; border: 1px solid var(--rule-strong); border-radius: var(--radius); background: #fff; font-size: 14px; color: var(--ink-soft); }
+.push-ask > svg { color: var(--accent); flex: none; }
+.push-ask > span { flex: 1; min-width: 180px; }
+.push-note { margin: 0; font-size: 13px; text-align: center; }
