@@ -1,4 +1,4 @@
-import { LogIn } from 'lucide-react'
+import { Eye, EyeOff, LogIn } from 'lucide-react'
 import { useEffect, useState, type FormEvent } from 'react'
 import { ApiError } from '../api/client'
 import { useAuth } from '../auth'
@@ -15,8 +15,9 @@ const DEMO = [
   { username: 'kho', password: '12345', label: 'Kho' },
 ]
 
-// Quick sign-in only on the developer's own machine: through ngrok or the Wi-Fi IP anyone holding the link would get in
-const QUICK_LOGIN = import.meta.env.DEV && ['localhost', '127.0.0.1'].includes(window.location.hostname)
+// TEMPORARY for testing (2026-10-10): quick sign-in also through ngrok and the Wi-Fi IP, so anyone holding the link gets in.
+// Remove before sharing the link widely: put back `&& ['localhost', '127.0.0.1'].includes(window.location.hostname)`
+const QUICK_LOGIN = import.meta.env.DEV
 
 const WEEKDAY = new Intl.DateTimeFormat('vi-VN', { weekday: 'long' })
 const DAY = new Intl.DateTimeFormat('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' })
@@ -40,6 +41,7 @@ export function Login() {
   const [error, setError] = useState<string | null>(null)
   // Which sign-in is running: 'form' or the username of a quick-login tile
   const [busy, setBusy] = useState<string | null>(null)
+  const [showPw, setShowPw] = useState(false)
 
   async function signIn(user: string, pass: string, who: string) {
     setBusy(who)
@@ -83,7 +85,13 @@ export function Login() {
             </label>
             <label className="field">
               Mật khẩu
-              <input className="input" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+              <div style={{ position: 'relative' }}>
+                <input className="input" type={showPw ? 'text' : 'password'} autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required style={{ paddingRight: '2.5rem' }} />
+                <button type="button" onClick={() => setShowPw((v) => !v)} aria-label={showPw ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
+                  style={{ position: 'absolute', right: '0.625rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--c-text-2, #888)', display: 'flex', alignItems: 'center', padding: 0 }}>
+                  {showPw ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
             </label>
             <button className="btn btn-primary btn-lg btn-block" disabled={busy !== null}>
               {busy === 'form' ? <span className="spinner" aria-hidden="true" /> : <LogIn size={18} aria-hidden="true" />}
